@@ -1,0 +1,11 @@
+File: export_final.zip
+Ảnh: 22 · đã có frame_meta: 22 · số đối tượng: child_seat=10, face=16, face13=4, hand=12, infant_seat=10, object=13, person=18, phone=1
+  [WARN] D05.png: left_eye_outer nằm bên trái ảnh so với right_eye_outer: kiểm lại quy ước trái/phải theo người (đúng nếu mặt quay hẳn sang bên)
+  [ERROR] S02_ir.png: child_seat: occupied='yes' không hợp lệ (cho phép: unknown, no)
+  [ERROR] S02_rgb.png: child_seat: occupied='yes' không hợp lệ (cho phép: unknown, no)
+Kết quả: 2 lỗi, 1 cảnh báo. Cảnh báo cần bạn tự xét, không tự động là sai.
+
+--- Giải thích của người gán ---
+[WARN] D05 left_eye_outer: ảnh D## xoay ~90°, hai mắt xếp theo trục y. left_eye_outer có y = 483 > right_eye_outer y = 436, nên trái/phải theo người đã đúng (CHECKPOINTS, Checkpoint B). Không sửa.
+[ERROR] S02_rgb, S02_ir child_seat occupied='yes': lỗi đã biết, chưa sửa trước hạn nộp. Đúng guideline 4.8 phải là no/unknown; ghế giữa S02 có hình giống trẻ em, cần hỏi coach (GUIDE §3).
+Lỗi đã biết khác (script không bắt): D01–D06 có box `object` (DMS không vẽ object, 4.2); D01, D03 mặt > 60 px nhưng chưa vẽ face13 (4.6). Ghi lại trong self_review.md.
