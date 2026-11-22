@@ -1,0 +1,10 @@
+File: export_final_v2.zip
+Ảnh: 22 · đã có frame_meta: 22 · số đối tượng: child_seat=10, face=16, face13=6, hand=12, infant_seat=10, object=6, person=18, phone=1
+  [WARN] D01.png: eye_left=unknown nhưng không điểm left_eye_* nào có cờ occluded/outside: nếu mắt bị che thì bật occluded, nếu thấy rõ thì chọn open/closed
+  [WARN] D03.png: eye_left=unknown nhưng không điểm left_eye_* nào có cờ occluded/outside: nếu mắt bị che thì bật occluded, nếu thấy rõ thì chọn open/closed
+  [WARN] D05.png: left_eye_outer nằm bên trái ảnh so với right_eye_outer: kiểm lại quy ước trái/phải theo người (đúng nếu mặt quay hẳn sang bên)
+Kết quả: 0 lỗi, 3 cảnh báo. Cảnh báo cần bạn tự xét, không tự động là sai.
+
+--- Giải thích của người gán ---
+[WARN] D01, D03 eye_left=unknown nhưng điểm left_eye_* không có cờ: ảnh NIR tối, vùng mắt nhỏ sau tròng kính trong. Vẫn thấy rõ mép và khóe mắt trái nên đặt được 4 điểm (không phải đoán, nên không bật occluded/outside), nhưng không phân biệt được khe mắt mở hay mí khép nên eye_left = unknown (4.4-1, 4.5). Mắt phải bị khuất nên các điểm right_eye_* bật occluded. Không sửa.
+[WARN] D05 left_eye_outer: ảnh D## xoay ~90°, hai mắt xếp theo trục y. left_eye_outer có y = 483 > right_eye_outer y = 436, nên trái/phải theo người đã đúng (4.4-2, 4.6). Không sửa.
